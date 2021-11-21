@@ -10,8 +10,6 @@ import { SharedModule } from './shared/shared.module'
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-
-
 @NgModule({
   declarations: [
     AppComponent
