@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { JwtHelperService } from "@auth0/angular-jwt";
-import { User } from "../models/user";
+import { User } from "../models/user.model";
 import { Observable } from "rxjs";
 
 //TO_BE_REMOVED
