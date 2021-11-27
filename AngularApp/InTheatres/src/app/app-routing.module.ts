@@ -1,21 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeaderComponent } from './shared/components/header/header.component';
 import { HomeComponent } from './public/components/home/home.component';
-import { LoginComponent } from './auth/components/login/login.component';
-import { SignupComponent } from './auth/components/signup/signup.component';
+import { LoginComponent } from './auth/components/user/login/login.component';
+import { SignupComponent } from './auth/components/user/signup/signup.component';
+import { UserComponent } from './auth/components/user/user.component';
 
 const routes: Routes = [
-  { path: 'header', component: HeaderComponent },
-  { path: 'header/home/login', component: LoginComponent},
-  { path: 'header/home/signup', component: SignupComponent},
-  { path: '', redirectTo: 'header', pathMatch: 'full' }
-  // { path: 'header/login', component: HomeComponent,
-  //   children: [{ path: '', component: LoginComponent}]
-  // },
-  // { path: 'header/signup', component: HomeComponent,
-  //   children: [{ path: '', component: SignupComponent}] 
-  // }
+  {
+    path: 'signup', component: UserComponent,
+    children: [{ path: '', component: SignupComponent }]
+  },
+  {
+    path: 'login', component: UserComponent,
+    children: [{ path: '', component: LoginComponent }]
+  },
+  {
+    path: 'user', redirectTo: '/login', pathMatch: 'full'
+  },
+  {
+    path: '', redirectTo: '/login', pathMatch: 'full'
+  }
 ];
 
 @NgModule({

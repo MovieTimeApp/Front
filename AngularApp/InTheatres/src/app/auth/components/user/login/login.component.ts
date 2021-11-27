@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/shared/models/user.service';
 
 @Component({
@@ -30,7 +30,8 @@ export class LoginComponent implements OnInit {
     this.userService.login(form.value).subscribe(
       res => {
         this.userService.setToken(res['token']);
-        this.router.navigateByUrl('/userprofile');
+        this.userService.getUserProfile(res['token']);
+        //this.router.navigateByUrl('/userprofile');
         this.serverErrorMessages = null;
       },
       err => {

@@ -23,15 +23,20 @@ export class UserService {
     //HttpMethods
 
     postUser(user: any){
-      return this.http.post(environment.apiBaseUrl+'/register',user, this.noAuthHeader);
+      return this.http.post(environment.apiBaseUrl + '/register', user, this.noAuthHeader);
     }
     
     login(authCredentials) {
-    return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials,this.noAuthHeader);
+        return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials, this.noAuthHeader);
     }
 
-    getUserProfile() {
-        return this.http.get(environment.apiBaseUrl + '/userProfile');
+    getUserProfile(id) {
+        return this.http.get(environment.apiBaseUrl + '/userProfile:_id', {
+            params: {
+                _id: id
+            },
+            observe: 'response'
+        });
     }
 
     //Helper Methods

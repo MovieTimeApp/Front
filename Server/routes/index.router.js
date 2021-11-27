@@ -116,7 +116,7 @@ router.post('/register', ctrlUser.register);
   *     description: Unknown user or wrong password or missing credentials.
   */
 router.post('/authenticate', ctrlUser.authenticate);
-router.get('/userProfile',jwtHelper.verifyJwtToken, ctrlUser.userProfile);
+router.get('/userProfile', jwtHelper.verifyJwtToken, ctrlUser.userProfile);
 
 
 module.exports = router;
