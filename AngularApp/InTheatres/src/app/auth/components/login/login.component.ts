@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AuthService } from 'src/app/shared/services/auth.service';
-//import { ProgressBarService } from 'src/app/shared/services/progress-bar.service';
-//import { AlertService } from 'ngx-alerts';
+import { Router } from "@angular/router";
+import { UserService } from 'src/app/shared/models/user.service';
 
 @Component({
   selector: 'app-login',
@@ -11,35 +10,33 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  // constructor(private authService: AuthService, public progressBar: ProgressBarService,
-  //   private alertService: AlertService){ }
-  constructor(private authService: AuthService){ }
+  constructor(private userService: UserService, private router : Router) { }
 
+  model ={
+    email :'',
+    password:''
+  };
+  
+  emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  
+  serverErrorMessages: string | null;
+  
   ngOnInit() {
+    if(this.userService.isLoggedIn())
+    this.router.navigateByUrl('/userprofile');
   }
 
-  onSubmit(f: NgForm) {
-    //this.alertService.info('Checking User Info');
-    alert("Checking User Info");
-    //this.progressBar.startLoading();
-    const loginObserver = {
-      next: () => {
-        //this.progressBar.setSuccess();
-        console.log('User logged in');
-        //this.alertService.success('Logged In');
-        alert("Logged In");
-        //this.progressBar.completeLoading();
+  onSubmit(form : NgForm){
+    this.userService.login(form.value).subscribe(
+      res => {
+        this.userService.setToken(res['token']);
+        this.router.navigateByUrl('/userprofile');
+        this.serverErrorMessages = null;
       },
-      error: (err: any) => {
-        //this.progressBar.setError();
-        console.log(err);
-        //this.alertService.danger('Unable to Login');
-        alert("Unable to Login");
-        //this.progressBar.completeLoading();
+      err => {
+        this.serverErrorMessages = err.error.message;
       }
-    };
-    this.authService.login(f.value).subscribe(loginObserver);
-
+    );
   }
 
 }
