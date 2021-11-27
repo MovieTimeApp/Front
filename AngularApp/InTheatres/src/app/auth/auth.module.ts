@@ -8,23 +8,26 @@ import { LoginComponent } from './components/user/login/login.component';
 import { SignupComponent } from './components/user/signup/signup.component';
 import { ResetPasswordComponent } from './components/user/reset-password/reset-password.component';
 import { UserComponent } from './components/user/user.component';
-
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
     LoginComponent,
     SignupComponent,
     ResetPasswordComponent,
-    UserComponent],
+    UserComponent,
+  ],
   imports: [
     CommonModule,
     AuthRoutingModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    SharedModule
   ],
   exports: [
     LoginComponent,
     SignupComponent,
-    ResetPasswordComponent]
+    ResetPasswordComponent
+  ]
 })
 export class AuthModule { }

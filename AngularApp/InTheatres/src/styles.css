@@ -327,7 +327,6 @@ label.validation-message{
 }
 .mat-button{
   margin-top: 10px;
-  width: 25%;
   color: white;
   height: 40px;
   background-color: #3F51B5;
@@ -335,3 +334,8 @@ label.validation-message{
 .mat-form-field {
   display: 100%;
 }
+.navbar-menu-items > button, mat-menu {
+    min-width: 128px;
+    margin: 0 10px 0 10px;
+}
+
