@@ -1,6 +1,6 @@
 <mat-toolbar fxLayout="row" color="primary">
     <div style="min-width: 60%;">
-        <span fxFlex >In Cinemas</span>
+        <span fxFlex >InTheatres</span>
    </div>
     <div class="navbar-menu-items" style="margin-left: auto; margin-right: 0;">
         <button mat-button *ngFor="let item of menuItems" fxHide.xs [routerLink]="item.label == 'Sign Up' ? ['/login'] : []" routerLinkActive="active">
