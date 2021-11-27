@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '../material/material.module';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './components/user/login/login.component';
@@ -18,7 +19,8 @@ import { UserComponent } from './components/user/user.component';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ],
   exports: [
     LoginComponent,

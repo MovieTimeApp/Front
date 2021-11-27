@@ -1,7 +1,11 @@
 <div class="wrapper">
-    <div id="formContent">
-      <a><h2 class="underlineHover" routerLink="/login" routerLinkActive="active"> Sign In </h2></a>&nbsp;&nbsp;&nbsp;&nbsp;
-      <a><h2 class="underlineHover" routerLink="/signup" routerLinkActive="active"> Sign Up </h2></a>
-      <router-outlet></router-outlet>
-    </div>
+    <mat-card class="example-card center-content">
+        <mat-card-header>
+            <h2><a class="underlineHover" routerLink="/login" routerLinkActive="active"> Sign In </a></h2>&nbsp;&nbsp;&nbsp;&nbsp;
+            <h2><a class="underlineHover" routerLink="/signup" routerLinkActive="active"> Sign Up </a></h2>
+        </mat-card-header>
+        <mat-card-content>
+            <router-outlet></router-outlet>
+        </mat-card-content>
+    </mat-card>
 </div>

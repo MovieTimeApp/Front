@@ -75,11 +75,11 @@ h2 {
 
 /* TABS */
 
-h2.inactive {
+a.inactive {
   color: #cccccc;
 }
 
-h2.active {
+a.active {
   color: #0d0d0d;
   border-bottom: 2px solid #5fbae9;
 }
@@ -254,10 +254,11 @@ label.validation-message{
 .underlineHover:after {
   display: block;
   left: 0;
-  bottom: -10px;
+  /*bottom: 10px;*/
   width: 0;
   height: 2px;
-  background-color: #56baed;
+  /*border-bottom: 2px solid #5fbae9;*/
+  /*background-color: #56baed;*/
   content: "";
   transition: width 0.2s;
 }
@@ -299,4 +300,38 @@ label.validation-message{
   background-color:#249424; /* Green */
   color: white;
   margin-bottom: 15px;
+}
+
+/* MAT STYLES */
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+.center-content {
+    margin-top: 100px;
+    text-align: -webkit-center;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+    margin-top: 10px;
+  width: 100%;
+}
+.mat-button{
+  margin-top: 10px;
+  width: 25%;
+  color: white;
+  height: 40px;
+  background-color: #3F51B5;
+}
+.mat-form-field {
+  display: 100%;
 }
