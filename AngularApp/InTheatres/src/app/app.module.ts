@@ -10,6 +10,8 @@ import { SharedModule } from './shared/shared.module'
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AuthModule,
     PublicModule,
     SharedModule,
-    FlexLayoutModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

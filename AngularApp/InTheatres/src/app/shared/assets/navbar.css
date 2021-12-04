@@ -1,0 +1,9 @@
+/* .mat-drawer {
+    background: #8b71b9;
+    background: linear-gradient(0deg, #8b71b9 0, #673ab7 100%);
+} */
+
+.mat-icon {
+    position: relative;
+    z-index: 4;
+}

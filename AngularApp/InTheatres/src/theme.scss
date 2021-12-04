@@ -15,7 +15,6 @@ $my-custom-theme: mat-dark-theme($my-custom-primary, $my-custom-accent, $my-cust
 /* Main theme defination */
 @include angular-material-theme($my-custom-theme);
 
-
 /* Alternate Angular Material Theme */
 .my-alternate-theme {
   $my-alternate-primary: mat-palette($mat-deep-purple);
@@ -25,4 +24,63 @@ $my-custom-theme: mat-dark-theme($my-custom-primary, $my-custom-accent, $my-cust
   $my-alternate-theme: mat-light-theme($my-alternate-primary, $my-alternate-accent, $my-alternate-warn);
 
   @include angular-material-theme($my-alternate-theme);
+
+  body {
+    background-color: whitesmoke;
+  }
+  
+  .mat-card, .mat-list-base .mat-list-item {
+    color: whitesmoke;
+  }
+  
+  .mat-drawer-container {
+    background-color: #af1c8ab9;
+  }
+
+  .mat-drawer, .mat-toolbar.mat-primary {
+    //background: #8b71b9;
+    background: linear-gradient(45deg, #af1c8ab9 0, #673ab7 100%);
+    box-shadow: 0 0 45px 0 rgba(0, 0, 0, 0.575);
+    // border-right: 15px;
+    // border-radius: 10px;
+    // background: linear-gradient(0deg, #b69423af 0, #142b69ee 100%);
+  }
+
+  @mixin gradient-animation( $start, $end, $transTime ) {
+    background-size: 100%;
+    background-image: linear-gradient($start, $end);
+    position: relative;
+    z-index: 100;
+    
+    &:after {
+      background-image: linear-gradient($end, $start);
+      display: block;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 100%;
+      z-index: -100;
+      transition: opacity $transTime;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    &:hover {
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+  
+  // app-responsive-sidenav-list mat-list-item a:hover,
+  // app-responsive-sidenav-list mat-list-item a:hover mat-icon, 
+  // app-responsive-sidenav-list mat-list-item a.hover mat-icon,
+  app-responsive-toolbar a:hover,
+  app-responsive-toolbar a:hover mat-icon, 
+  app-responsive-toolbar a.hover mat-icon {
+    @include gradient-animation(#af1c8ab9, #ffc94e, 2s);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

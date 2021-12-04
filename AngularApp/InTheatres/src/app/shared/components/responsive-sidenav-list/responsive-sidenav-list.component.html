@@ -1,0 +1,22 @@
+
+
+<mat-nav-list>
+    <a href="#" mat-list-item>
+        <mat-icon>notifications</mat-icon>
+        Notifications
+    </a>
+    <a href="#" mat-list-item>
+        <mat-icon>message</mat-icon>
+        Messages</a>
+    <a *ngIf="loggedIn" href="#" (click)="onSidenavClose()" mat-list-item>
+        <mat-icon>account_box</mat-icon>
+        My Account
+    </a>
+    <a *ngIf="!loggedIn" href="/login" (click)="onSidenavClose()" mat-list-item>
+        <mat-icon>login</mat-icon><!--lock -->
+        Sign In
+    </a>
+    <a (click)="onSidenavClose()" mat-list-item><!--(click)="sidenav.toggle()"--><!--(click)="onSidenavClose()"-->
+        <mat-icon>close</mat-icon> Close
+    </a>
+</mat-nav-list>

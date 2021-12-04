@@ -1,7 +1,14 @@
-<div class="container my-alternate-theme">
-
+<!-- <div class="my-alternate-theme">
   <app-responsive-toolbar></app-responsive-toolbar>
-
-  <router-outlet></router-outlet>
-
-</div>
+</div> -->
+<mat-sidenav-container class="my-alternate-theme">
+  <mat-sidenav #sidenav role="navigation">
+    <app-responsive-sidenav-list (sidenavClose)="sidenav.close()"></app-responsive-sidenav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-responsive-toolbar (sidenavToggle)="sidenav.toggle()"></app-responsive-toolbar>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

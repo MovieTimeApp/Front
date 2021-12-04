@@ -5,16 +5,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
 /* BASIC */
 
-html {
-  background-color: #56baed;
-}
-
 body {
   font-family: "Poppins", sans-serif;
-  height: 100vh;
+  margin: 0;
+  height: 100%;
 }
 
 a {
@@ -31,7 +29,15 @@ h2 {
   text-transform: uppercase;
   display:inline-block;
   margin: 40px 8px 10px 8px; 
+}
+
+h2.inactive {
   color: #cccccc;
+}
+
+h2.active {
+  color: #673ab7;
+  box-shadow: inset 0 -2px 0 #673ab7;
 }
 
 
@@ -81,7 +87,7 @@ a.inactive {
 
 a.active {
   color: #0d0d0d;
-  border-bottom: 2px solid #5fbae9;
+  /*border-bottom: 2px solid  #673ab7; /*#5fbae9;*/
 }
 
 
@@ -151,7 +157,7 @@ input[type=text],input[type=password] {
 
 input[type=text]:focus,input[type=password]:focus {
   background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid #673ab7; /*#5fbae9;*/
 }
 
 input[type=text]:placeholder {
@@ -251,25 +257,27 @@ label.validation-message{
 }
 
 /* Simple CSS3 Fade-in Animation */
+
+.underlineHover:hover {
+  color: #8b71b9;
+} 
+
 .underlineHover:after {
   display: block;
   left: 0;
-  /*bottom: 10px;*/
+  bottom: -10px;
   width: 0;
   height: 2px;
-  /*border-bottom: 2px solid #5fbae9;*/
-  /*background-color: #56baed;*/
+  background-color: #673ab7;
+  box-shadow: inset 0 -2px 0 #8b71b9;
   content: "";
-  transition: width 0.2s;
-}
-
-.underlineHover:hover {
-  color: #0d0d0d;
+  transition: width 0.5s;
 }
 
 .underlineHover:hover:after{
   width: 100%;
 }
+
 
 
 
@@ -302,6 +310,15 @@ label.validation-message{
   margin-bottom: 15px;
 }
 
+/* NAVBAR */
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
 /* MAT STYLES */
 .example-card {
   max-width: 400px;
@@ -311,10 +328,12 @@ label.validation-message{
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
 }
+
 .center-content {
     margin-top: 100px;
     text-align: -webkit-center;
 }
+
 .example-form {
   min-width: 150px;
   max-width: 500px;
@@ -325,17 +344,67 @@ label.validation-message{
     margin-top: 10px;
   width: 100%;
 }
+
+.mat-icon {
+  margin-right: 5px;
+}
+
 .mat-button{
   margin-top: 10px;
   color: white;
   height: 40px;
   background-color: #3F51B5;
 }
+
 .mat-form-field {
   display: 100%;
 }
+
 .navbar-menu-items > button, mat-menu {
     min-width: 128px;
     margin: 0 10px 0 10px;
+ }
+
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+  height: 100%;
 }
 
+mat-sidenav {
+  width: 250px;
+}
+
+mat-toolbar {
+  position: fixed;
+  z-index: 1000;
+}
+
+main {
+  height: 100vh;
+  padding: 10px;
+}
+
+/*ICON LABELS HOVER CLICK*/
+/* a {
+  text-decoration: none;
+  color: #673ab7;
+}
+
+a:hover, a:focus{
+  color: #673ab7;
+} */
+
+.navigation-items{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+mat-toolbar{
+  border-radius: 3px;
+}
+
+@media(max-width: 959px){
+  mat-toolbar{
+      border-radius: 0px;
+  }
+}

@@ -4,20 +4,25 @@ import { MaterialModule } from '../material/material.module';
 import { SharedRoutingModule } from './shared-routing.module';
 import { RouterModule } from '@angular/router';
 import { ResponsiveToolbarComponent } from './components/responsive-toolbar/responsive-toolbar.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ResponsiveSidenavListComponent } from './components/responsive-sidenav-list/responsive-sidenav-list.component';
 
 
 @NgModule({
   declarations: [
-    ResponsiveToolbarComponent
+    ResponsiveToolbarComponent,
+    ResponsiveSidenavListComponent
   ],
   imports: [
     CommonModule,
     SharedRoutingModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   exports: [
-    ResponsiveToolbarComponent
+    ResponsiveToolbarComponent,
+    ResponsiveSidenavListComponent
   ]
 })
 export class SharedModule { }
