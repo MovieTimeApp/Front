@@ -5,7 +5,7 @@
   <mat-sidenav #sidenav role="navigation">
     <app-responsive-sidenav-list (sidenavClose)="sidenav.close()"></app-responsive-sidenav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content class="sidenav">
     <app-responsive-toolbar (sidenavToggle)="sidenav.toggle()"></app-responsive-toolbar>
     <main>
       <router-outlet></router-outlet>

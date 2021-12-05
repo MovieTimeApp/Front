@@ -9,6 +9,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 
 /* BASIC */
 
+app-root {
+  background: url(assets/icons/Cover.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; /*auto*/
+}
+
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -31,16 +39,13 @@ h2 {
   margin: 40px 8px 10px 8px; 
 }
 
-h2.inactive {
-  color: #cccccc;
-}
+/* h2.inactive {
+  color: #8366b6;
+} */
 
 h2.active {
-  color: #673ab7;
-  box-shadow: inset 0 -2px 0 #673ab7;
+  color: #fddf98;
 }
-
-
 
 /* STRUCTURE */
 
@@ -258,9 +263,30 @@ label.validation-message{
 
 /* Simple CSS3 Fade-in Animation */
 
+.underlineHover {
+  background: linear-gradient(to right, #f32170,
+             #ff6b08, #ffc94e);
+  animation: rainbow 2s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  display: block;
+  text-align: center;
+  transition: color .2s ease-in-out;
+  font-weight: 900;
+}
+
 .underlineHover:hover {
-  color: #8b71b9;
+  background-color: linear-gradient(to right, #f32170,
+                    #ff6b08, #ffc94e);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 } 
+
+@keyframes rainbow { 
+  0%{background-position:left}
+  50%{background-position:right}
+  100%{background-position:left}
+}
 
 .underlineHover:after {
   display: block;
@@ -268,8 +294,9 @@ label.validation-message{
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #673ab7;
-  box-shadow: inset 0 -2px 0 #8b71b9;
+  background-color: linear-gradient(to right, #f32170,
+                    #ff6b08, #ffc94e);
+  box-shadow: inset 0 -2px 0 #fddf98;
   content: "";
   transition: width 0.5s;
 }
@@ -387,12 +414,18 @@ main {
   margin: 0;
 }
 
-mat-toolbar{
-  border-radius: 3px;
+/* mat-toolbar {
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
-@media(max-width: 959px){
+mat-sidenav {
+  border-top-right-radius: 45px;
+  border-bottom-right-radius: 45px;
+} */
+
+/* @media(max-width: 959px){
   mat-toolbar{
       border-radius: 0px;
   }
-}
+} */
