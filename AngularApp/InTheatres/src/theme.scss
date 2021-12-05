@@ -63,8 +63,13 @@ $my-custom-theme: mat-dark-theme($my-custom-primary, $my-custom-accent, $my-cust
     background: linear-gradient(-45deg, #61114db9 0, #371f61 100%);
   }
 
-  .mat-drawer, .mat-toolbar.mat-primary {
-    background: linear-gradient(45deg, #af1c8ab9 0, #673ab7 100%);
+  .mat-drawer {
+    background: linear-gradient(45deg, #af1c8a 0, #6034ad 100%);
+    box-shadow: 0 0 45px 0 rgba(0, 0, 0, 0.575);
+  }
+
+  .mat-toolbar.mat-primary {
+    background: linear-gradient(45deg, #af1c8aaf 0, #6134ada8 100%);
     box-shadow: 0 0 45px 0 rgba(0, 0, 0, 0.575);
   }
 
