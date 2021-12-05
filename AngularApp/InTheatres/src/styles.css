@@ -279,8 +279,6 @@ label.validation-message{
 }
 
 
-
-
 /* OTHERS */
 
 *:focus {
@@ -382,16 +380,6 @@ main {
   height: 100vh;
   padding: 10px;
 }
-
-/*ICON LABELS HOVER CLICK*/
-/* a {
-  text-decoration: none;
-  color: #673ab7;
-}
-
-a:hover, a:focus{
-  color: #673ab7;
-} */
 
 .navigation-items{
   list-style-type: none;
