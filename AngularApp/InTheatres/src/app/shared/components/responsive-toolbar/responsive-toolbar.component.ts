@@ -45,6 +45,11 @@ export class ResponsiveToolbarComponent implements OnInit {
     this.sidenavToggle.emit();
   }
 
+  public signout = () => {
+    this.loggedIn = false;
+  }
+
+
   // public trans() {
   //   document.documentElement.classList.add('transition');
   //   window.setTimeout(() => {

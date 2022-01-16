@@ -116,7 +116,36 @@ router.post('/register', ctrlUser.register);
   *     description: Unknown user or wrong password or missing credentials.
   */
 router.post('/authenticate', ctrlUser.authenticate);
-router.get('/userProfile', jwtHelper.verifyJwtToken, ctrlUser.userProfile);
+
+/**
+  * @swagger
+  * /api/userProfile/{userId}:
+  *  get:
+  *   summary: get user by id
+  *   description: get registered user
+  *   parameters:
+  *    - in: query
+  *      id: userId
+  *      schema:
+  *       type: string
+  *      required: true
+  *      description: alphanumeric ID of the user to get
+  *   
+  *   responses:
+  *    200:
+  *     description: User authenticated succesfully.
+  *     content:
+  *      application/json:
+  *       schema:
+  *        type: object
+  *        properties:
+  *         token:
+  *          type: string
+  *          description: System generated JWTtoken
+  *    404:
+  *     description: Unknown user or wrong password or missing credentials.
+  */
+router.get('/userProfile', jwtHelper.verifyJwtToken);
 
 
 module.exports = router;

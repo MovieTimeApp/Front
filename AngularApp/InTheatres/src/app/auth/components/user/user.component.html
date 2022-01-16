@@ -1,11 +1,55 @@
 <div class="wrapper">
-    <mat-card class="example-card center-content">
+    <mat-card class="example-card center-content" *ngIf="!isLoggedIn">
         <mat-card-header>
             <h2 class="cool-link underlineHover" routerLink="/login" routerLinkActive="active"> Sign In </h2>&nbsp;&nbsp;&nbsp;&nbsp;
             <h2 class="cool-link underlineHover" routerLink="/signup" routerLinkActive="active"> Sign Up </h2>
         </mat-card-header>
         <mat-card-content>
-            <router-outlet></router-outlet>
+            <router-outlet (activate)="subscribeToEmitter($event)" (deactivate)="unsubscribe()"></router-outlet>
         </mat-card-content>
     </mat-card>
+    <div class="container" *ngIf="isLoggedIn">
+        <section class="customer-logos slider">
+          <!-- <div class="slide figure"><img class="slide-image " src="imgSrc"
+            (mouseover)="imgSrc = 'assets/Transparent_Backgrounds/Bengaluru_Hover.png'"
+            (mouseout)="imgSrc = 'assets/Transparent_Backgrounds/Bengaluru.png'">
+          </div> -->
+          <div class="slide figure">
+            <!-- <img id="Bangaluru" (mouseover)="hoverOnCity($event)" (mouseout)="hoverOutCity($event)" class="slide-image image-main" src="assets/Transparent_Backgrounds/Bengaluru.png"> -->
+            <img id="Bangaluru" class="slide-image image-main" src="assets/Transparent_Backgrounds/Bengaluru.png">
+            <img id="Bangaluru" class="slide-image hovered-image" src="assets/Transparent_Backgrounds/Bengaluru_Hover.png">
+          </div>
+          <div class="slide figure">
+            <!-- <img id="Chennai" (mouseover)="hoverOnCity($event)" (mouseout)="hoverOutCity($event)" class="slide-image image-main" src="assets/Transparent_Backgrounds/Chennai.png"> -->
+            <img id="Chennai" class="slide-image image-main" src="assets/Transparent_Backgrounds/Chennai.png">
+            <img id="Chennai" class="slide-image hovered-image" src="assets/Transparent_Backgrounds/Chennai_Hover.png">
+          </div>
+          <div class="slide figure">
+            <!-- <img id="Delhi" (mouseover)="hoverOnCity($event)" (mouseout)="hoverOutCity($event)" class="slide-image image-main" src="assets/Transparent_Backgrounds/Delhi.png"> -->
+            <img id="Chennai" class="slide-image image-main" src="assets/Transparent_Backgrounds/Bengaluru.png">
+            <img id="Chennai" class="slide-image hovered-image" src="assets/Transparent_Backgrounds/Chennai_Hover.png">
+          </div><div class="slide figure">
+            <!-- <img id="Hyderabad" (mouseover)="hoverOnCity($event)" (mouseout)="hoverOutCity($event)" class="slide-image image-main" src="assets/Transparent_Backgrounds/Hyderabad.png"> -->
+            <img id="Hyderabad" class="slide-image image-main" src="assets/Transparent_Backgrounds/Hyderabad.png">
+            <img id="Hyderabad" class="slide-image hovered-image" src="assets/Transparent_Backgrounds/Hyderabad_Hover.png">
+          </div>
+          <div class="slide figure">
+            <!-- <img id="Jaipur" (mouseover)="hoverOnCity($event)" (mouseout)="hoverOutCity($event)" class="slide-image image-main" src="assets/Transparent_Backgrounds/Jaipur.png"> -->
+            <img id="Jaipur" class="slide-image image-main" src="assets/Transparent_Backgrounds/Jaipur.png">
+            <img id="Jaipur" class="slide-image hovered-image" src="assets/Transparent_Backgrounds/Jaipur_Hover.png">
+          </div>
+          <div class="slide figure">
+            <!-- <img id="Kolkata" (mouseover)="hoverOnCity($event)" (mouseout)="hoverOutCity($event)" class="slide-image image-main" src="assets/Transparent_Backgrounds/Kolkata.png"> -->
+            <img id="Kolkata" class="slide-image image-main" src="assets/Transparent_Backgrounds/Kolkata.png">
+            <img id="Kolkata" class="slide-image hovered-image" src="assets/Transparent_Backgrounds/Kolkata_Hover.png">
+          </div>
+          <div class="slide figure">
+            <!-- <img id="Mumbai" (mouseover)="hoverOnCity($event)" (mouseout)="hoverOutCity($event)" class="slide-image image-main" src="assets/Transparent_Backgrounds/Mumbai.png"> -->
+            <img id="Mumbai" class="slide-image image-main" src="assets/Transparent_Backgrounds/Mumbai.png">
+            <img id="Mumbai" class="slide-image hovered-image" src="assets/Transparent_Backgrounds/Mumbai_Hover.png">
+          </div>
+          
+          
+        </section>
+    </div>
 </div>

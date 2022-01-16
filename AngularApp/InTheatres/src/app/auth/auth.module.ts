@@ -15,7 +15,7 @@ import { SharedModule } from '../shared/shared.module';
     LoginComponent,
     SignupComponent,
     ResetPasswordComponent,
-    UserComponent,
+    UserComponent
   ],
   imports: [
     CommonModule,
@@ -27,6 +27,7 @@ import { SharedModule } from '../shared/shared.module';
   exports: [
     LoginComponent,
     SignupComponent,
+    UserComponent,
     ResetPasswordComponent
   ]
 })

@@ -44,6 +44,10 @@
         <mat-icon>account_box</mat-icon>
         My Account
       </a>
+      <a *ngIf="loggedIn" mat-button (click)="signout()">
+        <mat-icon>logout</mat-icon>
+        Sign Out
+      </a>
       <a *ngIf="!loggedIn" href="/login" mat-button>
         <mat-icon>login</mat-icon><!--lock -->
         Sign In

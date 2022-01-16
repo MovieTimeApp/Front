@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DomSanitizer } from '@angular/platform-browser';
+import { SharedDataService } from './auth/components/user/shared-data.service'
+
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { DomSanitizer } from '@angular/platform-browser';
     SharedModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [
+    SharedDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
